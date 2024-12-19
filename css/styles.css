@@ -73,29 +73,75 @@ img {
 }
 
 /* =====================================================================
-   PHOTO GALLERY SECTION
+   Info selection
 ===================================================================== */
-.photo-gallery {
-    padding: 4rem 2rem;
-    text-align: center;
+.info-sections {
+    display: flex;
+    gap: 16px;
+    margin: 40px 0;
+    justify-content: space-between;
 }
 
-.photo-gallery h2 {
-    color: #0056b3;
-    margin-bottom: 2rem;
+.section-card {
+    position: relative;
+    flex: 1;
+    height: 400px; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+.section-card:hover {
+    transform: scale(1.05);
 }
 
-.gallery-grid img {
+.section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.section-card:hover .section-overlay {
+    opacity: 1;
+}
+
+.section-overlay h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-overlay button {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 4px;
+}
+
+.section-overlay button:hover {
+    background: #fff;
+    color: #000;
 }
 
 /* =====================================================================
