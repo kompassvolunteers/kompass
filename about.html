@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kompass</title>
+    <title>About Us - Kompass</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="icon" href="images/faviicon/favicon.ico" type="image/x-icon">
+    <script src="js/script.js"></script>
+
+    <!-- Standard favicon -->
     <link rel="icon" href="images/faviicon/favicon.ico" type="image/x-icon">
 
     <!-- PNG favicons -->
@@ -26,15 +30,13 @@
     <header class="sticky-header">
         <nav>
             <div class="header-container">
-                <!-- Logo -->
                 <a href="index.html" class="logo-link">
                     <img src="images/header-logo.png" alt="Kompass Logo" class="logo">
                 </a>
-                <!-- Navigation Links -->
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="team.html" class="active">Team</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="team.html">Team</a></li>
                     <li><a href="initiatives.html">Initiatives</a></li>
                     <li><a href="join-us.html">Join Us</a></li>
                 </ul>
@@ -43,68 +45,107 @@
     </header>
 
     <main>
-        <!-- Hero Section with Image -->
-
-        <section class="hero hero-about">
-            <div class="hero-overlay">
-                <h1>About Us</h1>
-                <p>Building Bridges, Empowering Communities</p>
+        <!-- Simplified Hero Section -->
+        <section class="page-header">
+            <h1>Building Bridges | Empowering Communities</h1>
+        </section>
+        <section class="storyboard">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-event" id="event-2023">
+                    <div class="timeline-content">
+                        <h3>December 2023</h3>
+                        <p>Kompass is founded with the vision of creating a platform for young adults and students to engage in community building and volunteering across the world.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/2023.jpeg" alt="Founding of Kompass">
+                    </div>
+                </div>
+                <div class="timeline-event" id="event-2024-spring">
+                    <div class="timeline-content">
+                        <h3>Spring 2024</h3>
+                        <p>Our first trip takes us to Kenya, where we begin our mission of empowering communities through sustainable projects.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/2024-kenya.JPG" alt="First trip to Kenya">
+                    </div>
+                </div>
+                <div class="timeline-event" id="event-2024-summer">
+                    <div class="timeline-content">
+                        <h3>Summer 2024</h3>
+                        <p>We expand our reach to Baray, Cambodia, initiating projects focused on community building and education.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/2024-cambodia.jpg" alt="Baray, Cambodia">
+                    </div>
+                </div>
+                <div class="timeline-event" id="event-2025">
+                    <div class="timeline-content">
+                        <h3>Spring 2025</h3>
+                        <p>We return to Baray, Cambodia, continuing our efforts and strengthening our commitment to sustainable development.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/2025.jpg" alt="Returning to Cambodia">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-button">
+                <a href="join-us.html" class="button">Join Us</a>
             </div>
         </section>
-
-
-        <!-- Mission Section -->
-        <section class="mission">
-            <h2>Our Mission</h2>
-            <p>台灣有許多知名的非營利組織提供了多種國際志工機會，但參觀、探訪等活動真的能為當地帶
-                來改變嗎？創辦人陳悅安 Edwin 以及共同創辦人陳宏騰 Jerry 、于筱陵 Vanessa 來自台灣，
-                透過志工服務認識了彼此，並在2023年創辦了Kompass 。這個組織建立於我們共同對志工
-                服務的熱誠以及對『永續發展』和『長期合作』的重視。我們的目標是透過專注於可持續的長
-                期合作項目讓這個世界變得更美好。例如，我們在肯尼亞奈洛比為當地的貧民窟建立了水耕農
-                場 （Hydroponics）用來對抗缺乏食物以及食品安全的問題，並用額外收入來維持農場的永
-                續發展。此外，我們還舉辦了多個講座以及工作坊，內容包含：月經貧窮、服裝設計、財務素
-                養、台灣＆肯亞文化交流、衛生習慣、社區美化＆重建等活動。不論志工選擇前往哪個國家，
-                Kompass重視『雙向交流』而非『單方面贈與』，此外，在志工結束旅程後，我們所建造＆
-                修繕的設施將得宜持續運作。</p>
-        </section>
-
         <!-- Core Values Section -->
         <section class="values">
-            <h2>Our Core Values</h2>
+            <h2 class="section-title">Our Core Values</h2>
             <div class="values-grid">
                 <div class="value">
-                    <h3>Collaboration</h3>
-                    <p>We believe in working together, fostering relationships that lead to lasting change.</p>
+                    <div class="value-image">
+                        <img src="images/collaboration.jpg" alt="Collaboration">
+                    </div>
+                    <div class="value-content">
+                        <h3>Collaboration | 合作</h3>
+                        <p>We believe in working together, fostering relationships that lead to lasting change.</p>
+                    </div>
                 </div>
                 <div class="value">
-                    <h3>Sustainability</h3>
-                    <p>From urban hydroponic farms in Nairobi to community libraries in Cambodia, we ensure our efforts have long-term impacts.</p>
+                    <div class="value-image">
+                        <img src="images/sustainability.jpg" alt="Sustainability">
+                    </div>
+                    <div class="value-content">
+                        <h3>Sustainability | 永續</h3>
+                        <p>From urban hydroponic farms in Nairobi to community libraries in Cambodia, we ensure our efforts have long-term impacts.</p>
+                    </div>
                 </div>
                 <div class="value">
-                    <h3>Cultural Exchange</h3>
-                    <p>Through interactive workshops, art exchanges, and storytelling, we learn from one another to build a better world.</p>
+                    <div class="value-image">
+                        <img src="images/culture.jpg" alt="Cultural Exchange">
+                    </div>
+                    <div class="value-content">
+                        <h3>Cultural Exchange | 交流</h3>
+                        <p>Through interactive workshops, art exchanges, and storytelling, we learn from one another to build a better world.</p>
+                    </div>
                 </div>
                 <div class="value">
-                    <h3>Empowerment</h3>
-                    <p>From educating youth about menstrual health to teaching financial literacy, we enable individuals to thrive.</p>
+                    <div class="value-image">
+                        <img src="images/empowerment.jpg" alt="Empowerment">
+                    </div>
+                    <div class="value-content">
+                        <h3>Empowerment | 賦能</h3>
+                        <p>From educating youth about menstrual health to teaching financial literacy, we enable individuals to thrive.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
     <footer>
         <div class="footer-container">
-            <!-- Left Section: Logo -->
             <div class="footer-left">
                 <img src="images/logo.png" alt="Kompass Logo" class="footer-logo">
             </div>
-    
-            <!-- Middle Section: Contact Info -->
             <div class="footer-middle">
                 <p><strong>Taipei, Taiwan</strong></p>
                 <p><a href="mailto:admin@kompassvolunteer.org" class="email-link">admin@kompassvolunteer.org</a></p>
             </div>
-    
-            <!-- Right Section: Social Media -->
             <div class="footer-right">
                 <p>Join us on Instagram</p>
                 <div class="social-links">
