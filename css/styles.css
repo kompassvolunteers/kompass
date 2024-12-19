@@ -77,9 +77,10 @@ img {
 ===================================================================== */
 .info-sections {
     display: flex;
-    gap: 16px;
+    gap: 16px; /* Spacing between images */
     margin: 40px 0;
     justify-content: space-between;
+    padding: 0 16px; /* Adds padding on left and right to create a margin */
 }
 
 .section-card {
@@ -143,7 +144,6 @@ img {
     background: #fff;
     color: #000;
 }
-
 /* =====================================================================
    VISION AND VALUES SECTION
 ===================================================================== */
@@ -429,12 +429,25 @@ footer {
     border-radius: 10px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.hero-overlay {
+    position: absolute;
+    top: 10%; /* Moves the content to the top of the section */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the content horizontally */
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Keeps semi-transparent overlay */
+    padding: 1rem; /* Adjust padding if needed */
+    border-radius: 10px; /* Optional: Rounds corners */
+    z-index: 2;
 }
 
-.hero p {
+.hero-overlay h1 {
+    font-size: 5rem;
+    margin-bottom: 0.5rem; /* Adjust spacing as needed */
+}
+
+.hero-overlay p {
     font-size: 1.2rem;
 }
 
@@ -446,15 +459,28 @@ footer {
     padding: 2rem;
 }
 
-.hero-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    border-radius: 10px;
-}
 
 /* =====================================================================
    MISSION SECTION
 ===================================================================== */
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5; /* Light background */
+    color: #333; /* Text color */
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
 .mission {
     padding: 2rem;
     text-align: center;
@@ -472,43 +498,156 @@ footer {
 }
 
 /* =====================================================================
-   CORE VALUES SECTION
+   Story Board
 ===================================================================== */
-.values {
-    background-color: white;
-    padding: 2rem;
+.storyboard {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
     text-align: center;
 }
 
-.values h2 {
-    margin-bottom: 2rem;
-    color: #0056b3;
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-event {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 40px;
+    opacity: 0; /* Hidden by default for scroll animation */
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
+}
+
+.timeline-event:nth-child(even) {
+    flex-direction: row-reverse; /* Alternating image placement */
+}
+
+.timeline-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.timeline-content h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+.timeline-image {
+    flex: 1;
+    text-align: center;
+}
+
+.timeline-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Vertical line in the center */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #007bff;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/* Scroll Animation */
+.timeline-event.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cta-button {
+    margin-top: 40px;
+}
+
+.cta-button .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button .button:hover {
+    background-color: #0056b3;
+}
+/* =====================================================================
+   CORE VALUES SECTION
+===================================================================== */
+.values {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9; /* Light background for distinction */
+    border-radius: 8px;
+}
+
+.values .section-title {
+    font-size: 2.5rem; /* Match size with "Our Journey" */
+    margin-bottom: 40px;
 }
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    justify-items: stretch;
-    align-items: stretch;
+    gap: 30px; /* Space between grid items */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    justify-items: center;
 }
 
 .value {
-    background-color: #f5f5f5;
+    background: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    max-width: 350px;
 }
 
-.value h3 {
-    color: #0056b3;
-    margin-bottom: 1rem;
+.value-image img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.value p {
-    margin: 0;
+.value-content {
+    padding: 20px;
+}
+
+.value-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.value-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
 }
 
 /* =====================================================================
